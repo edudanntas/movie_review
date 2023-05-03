@@ -1,7 +1,6 @@
 const apiKey = "10172222448242bbb7920b0752486d0c"
 const moviePosterUrl = "https://image.tmdb.org/t/p/w500"
-
-// https://www.youtube.com/watch?v=
+const movieTrailerUrl = "https://www.youtube.com/embed/"
 
 const searchBtn = document.querySelector('#search-movie-btn');
 const inputMovie = document.querySelector('#movie-input');
@@ -11,6 +10,13 @@ const movieTitle = document.querySelector("#movie-title");
 const moviePoster = document.querySelector("#movie-poster");
 const movieDescription = document.querySelector('#movie-description');
 const movieDateReleased = document.querySelector('.movie-release-date');
+
+const movieTrailerButton = document.querySelector("#show-trailer");
+const backgroundFade = document.querySelector(".fade");
+const movieTrailerContainer = document.querySelector(".movie-trailer-content");
+const closeMovieTrailer = document.querySelector(".close-trailer-modal");
+const movieTrailer = document.querySelector("iframe");
+
 
 const movieBackgroud = document.querySelector('.movie-background');
 const movieContent = document.querySelector('.movie-content');
@@ -45,6 +51,24 @@ const showMovieData = async (movie) => {
 
 };
 
+const getMovieTrailer = async (movie) => {
+    const dataMovie = await getMovieData(movie);
+
+    try {
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${dataMovie.results[0].id}/videos?api_key=${apiKey}&language=pt_BR`)
+        const data = res.json();
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+const showMovieTrailer = async (movie) => {
+    const data = await getMovieTrailer(movie);
+
+    movieTrailer.setAttribute('src', `https://www.youtube.com/embed/${data.results[0].key}`);
+};
+
 // Eventos
 
 inputMovie.addEventListener("keyup", (e) => {
@@ -72,3 +96,24 @@ searchBtn.addEventListener("click", (e) => {
 
     showMovieData(movie);
 });
+
+
+movieTrailerButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const movie = inputMovie.value;
+
+    showMovieTrailer(movie);
+
+    backgroundFade.classList.remove("hide");
+    movieTrailerContainer.classList.remove("hide");
+
+
+});
+
+closeMovieTrailer.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    backgroundFade.classList.add("hide");
+    movieTrailerContainer.classList.add("hide");
+})

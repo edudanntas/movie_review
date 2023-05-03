@@ -46,6 +46,15 @@ body {
     padding: 20px;
 }
 
+.form-input-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-input-container input {
+    width: 80%;
+}
 
 .movie-search {
     display: flex;
@@ -64,7 +73,7 @@ body {
 .movie-search input {
     border: 1px solid #ccc;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
     outline: var(--primary-color);
     transition: all 0.3s ease-in-out;
@@ -187,7 +196,11 @@ body {
     cursor: pointer;
 }
 
-#fade {
+.close-trailer-modal:hover {
+    color: #d1d1d1;
+}
+
+.fade {
     position: fixed;
     top: 0;
     left: 0;
