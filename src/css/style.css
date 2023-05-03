@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --primary-color: #ffd12a;
+    --secondary-color: #000;
+    --bg-gradient: linear-gradient(270deg, #90d8c5, #d890f2);
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+body {
+    background: var(--bg-gradient);
+    background-size: 400% 400%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: AnimationName 8s ease infinite;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+}
+
+
+.movie-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-search h3 {
+    color: var(--primary-color);
+    margin: 0 10px 0 0;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.movie-search input {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 10px;
+    outline: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.movie-search input:focus {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#search-movie-btn {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    outline: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+#search-movie-btn:hover {
+    background-color: #000;
+}
+
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+
+.movie-background {
+    background-color: #eee;
+    border-radius: 10px;
+    margin-right: 20px;
+    overflow: hidden;
+    width: 200px;
+    height: 300px;
+}
+
+.movie-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.movie-content {
+    flex: 1;
+}
+
+#movie-title {
+    color: var(--secondary-color);
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.movie-release-date {
+    opacity: 0.5;
+
+}
+
+#movie-description {
+    color: #666;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.error-message {
+    text-align: center;
+    display: flex;
+    opacity: 0.5;
+}
+
+.hide {
+    display: none;
+}
