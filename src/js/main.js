@@ -105,9 +105,8 @@ movieTrailerButton.addEventListener("click", (e) => {
 
     showMovieTrailer(movie);
 
-    backgroundFade.classList.remove("hide");
     movieTrailerContainer.classList.remove("hide");
-
+    backgroundFade.classList.remove("hide");
 
 });
 
