@@ -12,7 +12,6 @@ const moviePoster = document.querySelector("#movie-poster");
 const movieDescription = document.querySelector('#movie-description');
 const movieDateReleased = document.querySelector('.movie-release-date');
 
-
 const movieBackgroud = document.querySelector('.movie-background');
 const movieContent = document.querySelector('.movie-content');
 const errorMessage = document.querySelector('.error-message');
@@ -60,8 +59,7 @@ inputMovie.addEventListener("keyup", (e) => {
         inputMovie.clear()
     }
 
-})
-
+});
 
 searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -73,4 +71,4 @@ searchBtn.addEventListener("click", (e) => {
     movieElement.classList.remove('hide');
 
     showMovieData(movie);
-})
+});

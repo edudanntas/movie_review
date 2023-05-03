@@ -14,8 +14,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="./js/main.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/dotenv@10.0.0/dist/dotenv.min.js"></script>
-
 </head>
 
 <body>
@@ -40,8 +38,27 @@
                 <h3 id="movie-title"></h3>
                 <span class="movie-release-date"></span>
                 <p id="movie-description"></p>
+                <div class="movie-options">
+                    <button id="show-trailer">
+                        <i class="fa-solid fa-film"></i>
+                    </button>
+                </div>
             </div>
         </div>
+    </div>
+
+    <div id="fade"></div>
+    <div class="movie-trailer-content">
+        <div class="movie-trailer-title">
+            <p>Reproduzir trailer</p>
+            <button class="close-trailer-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <iframe width="840" height="473" src="https://www.youtube.com/embed/Js7wxoqeVK0" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
     </div>
 
 </body>
