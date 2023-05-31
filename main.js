@@ -115,4 +115,5 @@ closeMovieTrailer.addEventListener("click", (e) => {
 
     backgroundFade.classList.add("hide");
     movieTrailerContainer.classList.add("hide");
+    movieTrailer.setAttribute('src', '');
 })
